@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://cfhkaavcn5gfg"]
+
+[ext_resource type="Texture2D" uid="uid://r0x1uv11qbea" path="res://burger_spritesheet.png" id="1_kmg6b"]
+[ext_resource type="Script" path="res://burger.gd" id="1_xfx0f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uyafh"]
+radius = 7.07107
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0he34"]
+atlas = ExtResource("1_kmg6b")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfn1b"]
+atlas = ExtResource("1_kmg6b")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddkas"]
+atlas = ExtResource("1_kmg6b")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2fcj"]
+atlas = ExtResource("1_kmg6b")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm7ph"]
+atlas = ExtResource("1_kmg6b")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skmno"]
+atlas = ExtResource("1_kmg6b")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_absqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0he34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfn1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddkas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2fcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm7ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skmno")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Burger" type="Area2D"]
+self_modulate = Color(1, 1, 1, 0)
+script = ExtResource("1_xfx0f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uyafh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(0.59375, 0.59375)
+sprite_frames = SubResource("SpriteFrames_absqx")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

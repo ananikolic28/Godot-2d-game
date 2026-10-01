@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh42ao2yfpw78"]
+
+[ext_resource type="Texture2D" uid="uid://cmrp6kkgvnj7s" path="res://SLIKE 14.5/lift crven.png" id="1_61cgm"]
+
+[node name="Lift2" type="Node2D"]
+
+[node name="LiftCrven" type="Sprite2D" parent="."]
+position = Vector2(20, 14)
+scale = Vector2(0.921875, 1)
+texture = ExtResource("1_61cgm")

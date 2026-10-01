@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://chaxxmd4fnk1x"
+path="res://.godot/imported/eded.dialogue-8df1fcee90d927e1714344b44168b88f.tres"
+
+[deps]
+
+source_file="res://eded.dialogue"
+dest_files=["res://.godot/imported/eded.dialogue-8df1fcee90d927e1714344b44168b88f.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://byuwr4ye5xkqn"
+path="res://.godot/imported/Hit (30x38).png-7b56f815695e62ff51c5e874f5424d94.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://enemy/Radish/Hit (30x38).png"
+dest_files=["res://.godot/imported/Hit (30x38).png-7b56f815695e62ff51c5e874f5424d94.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

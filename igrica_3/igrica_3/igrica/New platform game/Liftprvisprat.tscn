@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpvwx6b4po3pl"]
+
+[ext_resource type="Texture2D" uid="uid://d0di1w3u0qook" path="res://SLIKE 14.5/lift zelen.png" id="1_2b3rx"]
+[ext_resource type="Script" path="res://Liftprvisprat.gd" id="1_2qala"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc44v"]
+size = Vector2(67, 55.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4kx1"]
+size = Vector2(13, 10)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2qala")
+
+[node name="LiftZelen" type="Sprite2D" parent="."]
+position = Vector2(20, 14)
+scale = Vector2(0.908203, 0.999023)
+texture = ExtResource("1_2b3rx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(21.5, 18.4375)
+shape = SubResource("RectangleShape2D_qc44v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 550
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_y4kx1")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

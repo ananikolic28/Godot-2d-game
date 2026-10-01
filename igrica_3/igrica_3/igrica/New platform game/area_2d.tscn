@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://du12rixt0gupp"]
+
+[ext_resource type="Texture2D" uid="uid://bvxek5oig4wca" path="res://jednaknjiga.png" id="1_jhjt0"]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Jednaknjiga" type="Sprite2D" parent="."]
+position = Vector2(369, 254)
+texture = ExtResource("1_jhjt0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

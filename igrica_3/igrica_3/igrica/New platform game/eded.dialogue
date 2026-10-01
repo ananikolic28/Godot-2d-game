@@ -1,0 +1,89 @@
+~ start
+
+if Utils.firsttime == true
+	set Utils.firsttime = false
+	Trunk: [[Hello!!!]]
+	- Um hello... what are you?
+		Trunk: Nini!!!
+		- But what exactly are you??
+		Nini: Nini?
+		- Okay Nini, nice to meet you. Could you possibly let me use the lift?
+		Nini: No.
+		- Why?
+		Nini: I only give u the lift if I get something in return.
+		- Okay, what do you want?
+		Nini: Participate in my quizz.
+		Nini: Im a big "Who Wants to Be a Millionaire?" fan but no one wants to play it.
+		- Okay, let's play.
+			=> quiz
+		- Will play later.. See you Nini.
+		
+		=> END
+else if Utils.quizzpassed == false and Utils.firstime == false
+	Nini:[[Hey | Aloha | Hi again]]. Are you ready for the quizz now?
+	- Yes, let's play. => quiz
+	- Not yet Nini. => END
+else if Utils.quizzpassed == true
+	set Utils.quizzpassed == false
+	Nini: Did you bring me moreeee coins?
+	- Yes. Here they are.
+		if Utils.knjige >= 5
+			set Utils.ninigotov = true
+			set Utils.knjige = 0
+			Nini: Okay friend. Thank you for coins. I will let you pass through the lift but be careful. Nini is much kinder than others.
+			- Thank you Nini. See you soon.
+			=> END
+		else
+			Nini: liar liar pants on fire.
+			- Ahh.
+			=> END
+	- Nope
+		Nini: Go get them please.
+	=> END 
+else 
+	Nini: Im too tired to talk now. We will talk later.... 
+=> END
+
+
+~ quiz
+Host Nini: [speed=0.5] Firrst question... for uhhh [wait=1] [speed=0.5]1000 coins is: "Based on data collected in 2022. the population of Slovenia is: [wait = 1.2] \n A. 1 million  [wait = 1.2]\n B. 2 millions [wait = 1.2] \n C. 3 millions  or [wait = 1.2] \n D. 4 millions"
+- A.
+	Host Nini: [[Come back when you are read. This is a real quizz! | Tough luck... See ya | You failed! Go... prepare better]]
+	=> END
+- B.
+	Host Nini: [[Bravissimo! | Well done]]. Let's go to the question number 2.
+	Host Nini: [speed=0.5] The second question for 2000 coins is: "Which one of these does not accept studentski boni: [wait = 1.2]\n A. McDonalds Koper [wait = 1.2] \n B. SUBWAY [wait = 1.2]\n C. Pekarna Europa [wait = 1.2] \n D. Magic Fast Food"
+	- A. 
+		Host Nini: You are out! Come back prepared.	
+	- B. 
+		Host Nini: You are out! Come back prepared.	
+	- C.
+		Host Nini: Well played. Let's go to the last question.
+		Host Nini: The question number three is: "To successfully enroll into the next year, a student must have a minimum number of ECSTs which is:  [wait = 1.2]\n A. 36 [wait = 1.2] \n B. 42 [wait = 1.2]\n C. 48 [wait = 1.2] \n D. 54"
+		- A.
+			Host Nini: You are out! Come back prepared.
+			- Can't I call someone for help?
+			Host Nini: In Nini millionaire quizz there are no second chances. Go prepare better. => END
+		- B.
+			set Utils.quizzpassed = true
+			Host Nini: Well played! You passed my quizz.
+			- Can I use lift now?
+			Host Nini: Not yet. Bring me 5 coins and I shall let you go.
+			- Ahh okay.
+			- Yes Nini...
+		- C.
+			Host Nini: You are out! Come back prepared.
+			- Can't I call someone for help?
+			Host Nini: In Nini millionaire quizz there are no second chances. Go prepare better. => END
+		- D.
+			Host Nini: You are out! Come back prepared.
+			- Can't I call someone for help?
+			Host Nini: In Nini millionaire quizz there are no second chances. Go prepare better. => END
+	- D.
+		Host Nini: You are out! Come back prepared.	
+- C.
+	Host Nini: [[Come back when you are read. This is a real quizz! | Tough luck... See ya | You failed! Go... prepare better]]
+	=> END
+- D.
+	Host Nini: [[Come back when you are read. This is a real quizz! | Tough luck... See ya | You failed! Go... prepare better]]
+	=> END
